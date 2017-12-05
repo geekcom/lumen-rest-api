@@ -20,6 +20,17 @@ class PeopleController extends Controller
         return response()->json(['status' => 'error', 'message' => 'no data'], 404);
     }
 
+    public function showAll()
+    {
+        $people = People::all();
+
+        if (count($people)) {
+            return response()->json(['status' => 'success', 'data' => $people], 200);
+        }
+
+        return response()->json(['status' => 'error', 'message' => 'no data'], 404);
+    }
+
     public function create(Request $request)
     {
         $data = $request->all();

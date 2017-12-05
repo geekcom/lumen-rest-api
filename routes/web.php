@@ -20,6 +20,8 @@ $router->group(['prefix' => 'api/v1'], function ($router) {
 
     $router->get('people/{id}', 'PeopleController@show');
 
+    $router->get('people', 'PeopleController@showAll');
+
     $router->post('people', 'PeopleController@create');
 
     $router->put('people/{id}', 'PeopleController@update');
